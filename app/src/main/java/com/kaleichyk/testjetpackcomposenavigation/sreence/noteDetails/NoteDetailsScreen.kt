@@ -1,4 +1,4 @@
-package com.kaleichyk.testjetpackcomposenavigation
+package com.kaleichyk.testjetpackcomposenavigation.sreence.noteDetails
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme

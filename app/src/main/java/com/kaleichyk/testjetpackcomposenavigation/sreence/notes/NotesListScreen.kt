@@ -1,4 +1,4 @@
-package com.kaleichyk.testjetpackcomposenavigation
+package com.kaleichyk.testjetpackcomposenavigation.sreence.notes
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,7 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.kaleichyk.testjetpackcomposenavigation.data.NoteModel
 import com.kaleichyk.testjetpackcomposenavigation.data.notes
@@ -22,7 +21,7 @@ import com.kaleichyk.testjetpackcomposenavigation.view.Avatar
 @ExperimentalCoilApi
 @Composable
 fun NoteListScreen(
-    navController: NavController?,
+    navigator: NotesListNavigator?,
     modifier: Modifier = Modifier,
     notes: List<NoteModel>
 ) {
@@ -31,7 +30,7 @@ fun NoteListScreen(
             items = notes,
             itemContent = {
                 NoteViewHolder(note = it) {
-                    navController?.navigate("notes/details/0")
+                    navigator?.moveToNoteDetails(it.id)
                 }
             }
         )
@@ -75,7 +74,7 @@ fun NoteDetails(note: NoteModel, modifier: Modifier = Modifier) {
 fun NoteListScreenPreview() {
     TestJetpackComposeNavigationTheme {
         Scaffold {
-            NoteListScreen(notes = notes, navController = null)
+            NoteListScreen(notes = notes, navigator = null)
         }
     }
 }
