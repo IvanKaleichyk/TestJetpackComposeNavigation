@@ -1,4 +1,4 @@
-package com.kaleichyk.testjetpackcomposenavigation.sreence.notes
+package com.kaleichyk.testjetpackcomposenavigation.screen.bottomNavBar.navItems.notes
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -12,13 +12,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import com.kaleichyk.testjetpackcomposenavigation.data.NoteModel
 import com.kaleichyk.testjetpackcomposenavigation.data.notes
 import com.kaleichyk.testjetpackcomposenavigation.ui.theme.TestJetpackComposeNavigationTheme
 import com.kaleichyk.testjetpackcomposenavigation.view.Avatar
 
-@ExperimentalCoilApi
 @Composable
 fun NoteListScreen(
     navigator: NotesListNavigator?,
@@ -37,7 +35,6 @@ fun NoteListScreen(
     }
 }
 
-@ExperimentalCoilApi
 @Composable
 inline fun NoteViewHolder(
     modifier: Modifier = Modifier,
@@ -68,7 +65,6 @@ fun NoteDetails(note: NoteModel, modifier: Modifier = Modifier) {
     }
 }
 
-@ExperimentalCoilApi
 @Preview
 @Composable
 fun NoteListScreenPreview() {
@@ -79,7 +75,6 @@ fun NoteListScreenPreview() {
     }
 }
 
-@ExperimentalCoilApi
 @Preview
 @Composable
 fun NoteViewHolderPreview() {

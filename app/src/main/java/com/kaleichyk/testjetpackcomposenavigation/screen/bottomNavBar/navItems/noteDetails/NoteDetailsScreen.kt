@@ -1,4 +1,4 @@
-package com.kaleichyk.testjetpackcomposenavigation.sreence.noteDetails
+package com.kaleichyk.testjetpackcomposenavigation.screen.bottomNavBar.navItems.noteDetails
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.MaterialTheme
@@ -9,12 +9,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil.annotation.ExperimentalCoilApi
 import com.kaleichyk.testjetpackcomposenavigation.data.notes
 import com.kaleichyk.testjetpackcomposenavigation.ui.theme.TestJetpackComposeNavigationTheme
 import com.kaleichyk.testjetpackcomposenavigation.view.Avatar
 
-@ExperimentalCoilApi
 @Composable
 fun NoteDetailsScreen(id: Int, modifier: Modifier = Modifier) {
     val note = getNoteById(id)
@@ -38,10 +36,9 @@ fun NoteDetailsScreen(id: Int, modifier: Modifier = Modifier) {
 
 private fun getNoteById(id: Int) = notes.find { it.id == id } ?: notes[0]
 
-@ExperimentalCoilApi
 @Preview
 @Composable
-fun NoteDetailsScreenPreview(){
+fun NoteDetailsScreenPreview() {
     TestJetpackComposeNavigationTheme {
         Scaffold {
             NoteDetailsScreen(notes[0].id)

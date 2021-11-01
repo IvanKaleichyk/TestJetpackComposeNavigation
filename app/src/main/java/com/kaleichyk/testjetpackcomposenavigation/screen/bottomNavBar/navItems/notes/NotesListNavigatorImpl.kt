@@ -1,4 +1,4 @@
-package com.kaleichyk.testjetpackcomposenavigation.sreence.notes
+package com.kaleichyk.testjetpackcomposenavigation.screen.bottomNavBar.navItems.notes
 
 import androidx.navigation.NavController
 import com.kaleichyk.testjetpackcomposenavigation.navigation.NoteDetailsDestination
