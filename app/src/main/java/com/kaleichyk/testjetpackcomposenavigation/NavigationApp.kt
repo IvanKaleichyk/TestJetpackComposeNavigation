@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
 import coil.annotation.ExperimentalCoilApi
 import com.kaleichyk.testjetpackcomposenavigation.data.notes
 import com.kaleichyk.testjetpackcomposenavigation.navigation.NoteDetailsDestination
@@ -25,7 +26,8 @@ fun NavigationApp() {
         }
         composable(
             NoteDetailsDestination.toRoute(),
-            arguments = listOf(navArgument(NoteDetailsDestination.key) { type = NavType.IntType })
+            arguments = listOf(navArgument(NoteDetailsDestination.key) { type = NavType.IntType }),
+            deepLinks = listOf(navDeepLink { uriPattern = NoteDetailsDestination.toDeepLink() })
         ) { stack ->
             stack.arguments?.getInt(NoteDetailsDestination.key)?.let { id ->
                 NoteDetailsScreen(id = id)
